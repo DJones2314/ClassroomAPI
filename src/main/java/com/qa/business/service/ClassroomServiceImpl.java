@@ -16,8 +16,8 @@ public class ClassroomServiceImpl implements ClassroomService {
 		return repo.getAllTrainees();
 	}
 
-	public String addTrainee(String account) {
-		return repo.createTrainee(account);
+	public String addTrainee(String trainee) {
+		return repo.createTrainee(trainee);
 	}
 
 	public String deleteTrainee(Long id) {
