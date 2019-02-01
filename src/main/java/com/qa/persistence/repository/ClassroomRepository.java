@@ -8,4 +8,8 @@ public interface ClassroomRepository {
 	
 	String deleteTrainee(Long id);
 
+	
+//	//joining the tables
+//	String getAllTraineesWithTrainers(Long id);
+	
 }

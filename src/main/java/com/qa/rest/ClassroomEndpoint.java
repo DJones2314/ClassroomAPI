@@ -13,27 +13,27 @@ import org.apache.log4j.Logger;
 
 import com.qa.business.service.ClassroomService;
 
-@Path("/trainee")
+@Path("/classroom")
 public class ClassroomEndpoint {
 	
 	@Inject
 	private ClassroomService service;
 
-	@Path("/getAllTrainees")
+	@Path("/getAllClasses")
 	@GET
 	@Produces({ "application/json" })
 	public String getAllTrainees() {
 		return service.getAllTrainees();
 	}
 
-	@Path("/createTrainee")
+	@Path("/createClass")
 	@POST
 	@Produces({ "application/json" })
 	public String addTrainee(String trainee) {
 		return service.addTrainee(trainee);
 	}
 
-	@Path("/deleteTrainee/{id}")
+	@Path("/deleteClass/{id}")
 	@DELETE
 	@Produces({ "application/json" })
 	public String deleteTrainee(@PathParam("id") Long id) {
