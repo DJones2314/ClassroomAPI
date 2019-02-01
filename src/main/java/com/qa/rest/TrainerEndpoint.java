@@ -27,14 +27,14 @@ public class TrainerEndpoint {
 		return service.getAllTrainers();
 	}
 
-	@Path("/createTrainee")
+	@Path("/createTrainer")
 	@POST
 	@Produces({ "application/json" })
 	public String addTrainer(String trainer) {
 		return service.addTrainer(trainer);
 	}
 
-	@Path("/deleteTrainee/{id}")
+	@Path("/deleteTrainer/{id}")
 	@DELETE
 	@Produces({ "application/json" })
 	public String deleteTrainer(@PathParam("id") Long id) {

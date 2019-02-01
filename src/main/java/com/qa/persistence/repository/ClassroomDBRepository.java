@@ -8,6 +8,7 @@ import java.util.List;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
@@ -22,17 +23,19 @@ public class ClassroomDBRepository implements ClassroomRepository {
 	
 	@PersistenceContext(unitName = "primary")
 	private EntityManager manager;
-
+	
 	@Inject
 	private JSONUtil util;
 
 	@Override
 	public String getAllTrainees() {
 		Query query = manager.createQuery("Select a FROM Classroom a");
-		List<Classroom> trainees = (List<Classroom>) query.getResultList();
-		return util.getJSONForObject(trainees);
-	}
+	  		return util.getJSONForObject(query.getResultList());
+	          }
+	
 
+
+	
 	@Override
 	@Transactional(REQUIRED)
 	public String createTrainee(String trainee) {
